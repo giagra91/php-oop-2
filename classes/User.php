@@ -11,7 +11,7 @@ class User{
     protected bool $isRegistred;
     protected CreditCard $creditCard;
     protected int $discount;
-    protected Cart $cart;
+    protected array $cart;
 
 
     
@@ -24,10 +24,10 @@ class User{
      * @param bool $isRegistred Bool to check if user is logged
      * @param CreditCard $creditCard User's credit card
      * @param int $discount User's percentage of discount
-     * @param Cart $cart User's cart of products
+     * @param array $cart User's cart of products
      *  
      * */
-    function __construct($firstName, $lastName, $birthYear, $email, $username, $isRegistred = false, $creditCard, $discount = null, $cart){
+    function __construct($firstName, $lastName, $birthYear, $email, $username, $isRegistred = false, $creditCard, $discount = null, $cart = []){
         $this->firstName = $firstName;
         $this->lastName = $lastName;
         $this->birthYear = $birthYear;
@@ -35,7 +35,7 @@ class User{
         $this->username = $username;
         $this->isRegistred = $isRegistred;
         $this->creditCard = $creditCard;
-        $this->cart = $cart;
+        $this->cart = [];
 
         if($isRegistred){
             $this->discount = 20;
@@ -44,4 +44,27 @@ class User{
         }
     }
 
+    function getFirstName(){
+        return $this->firstName;
+    }
+
+    function getLastName(){
+        return $this->lastName;
+    }
+
+    function getBirthYear(){
+        return $this->birthYear;
+    }
+
+    function getEmail(){
+        return $this->email;
+    }
+
+
+    function buyProduct($product){
+        $price = $product->getPrice();
+        if($this->creditCard->getValidation() && $price <= $this->creditCard->getBalance()){
+            return "Hai acquistato il prodotto e hai speso: €" . $price;
+        }
+    }
 }

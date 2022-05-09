@@ -15,8 +15,16 @@ class Food extends Product{
     }
 
 
+    function getName(){
+        return $this->$name;
+    }
 
+    function getWeight(){
+        return $this->weight;
+    }
+
+    function getExpireDate(){
+        return $this->expireDate;
+    }
 
 }
-
-// $croc = new Food("croc", "500", "01/04/2023", "Food", 4.90, "Cat");

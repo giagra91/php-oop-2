@@ -1,7 +1,7 @@
 <?php
 
 class Cart {
-    protected array $cart = [];
+    protected array $cart;
 
     public function __construct($cart = []){
         $this->cart = $cart;

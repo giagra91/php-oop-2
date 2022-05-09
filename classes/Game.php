@@ -15,4 +15,18 @@ class Game extends Product{
         $this->measures = $measures;
 
     }
+
+    function getName(){
+        return $this->$name;
+    }
+
+    function getWeight(){
+        return $this->weight;
+    }
+
+    function getMeasures(){
+        return $this->measures;
+    }
+
+
 }

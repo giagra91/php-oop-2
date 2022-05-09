@@ -8,11 +8,11 @@ include_once __DIR__ . "/classes/User.php";
 include_once __DIR__ . "/classes/Cart.php";
 
 
-$croc = new Food("croc", "500", "01/04/2023", "Food", 4.90, "Cat");
+$croc = new Food("croc", "500 grammi", "01/04/2023", "Food", 4.90, "Cat");
 var_dump($croc);
-$gam = new Game("gioco", "500", "10x10x10", "Game", 4.90, "Dog");
+$gam = new Game("gioco", "5 kg", "10x10x10", "Game", 4.90, "Dog");
 var_dump($gam);
-$number = new CreditCard("1234567890123456", 2023, 456, "Intesa");
+$number = new CreditCard("1234567890123456", 2023, 456, "Intesa", 150);
 var_dump($number);
 
 $newCart = new Cart;
@@ -25,6 +25,10 @@ var_dump($newCart);
 $giorgio = new User("Giogio", "Giovanni", 1990,  "g.g@gmail.com", "giorgiog22", true, $number, 0, $newCart);
 var_dump($giorgio);
 
+echo $giorgio->buyProduct($croc);
+
+$caro = new User("Giogio", "Giovanni", 1990,  "g.g@gmail.com", "giorgiog22", true, $number, 0);
+var_dump($caro);
 
 ?>
 

@@ -12,4 +12,8 @@ class Product {
         $this->kindOfAnimal = $kindOfAnimal;
     }
 
+
+    function getPrice(){
+        return $this->price;
+    }
 }
