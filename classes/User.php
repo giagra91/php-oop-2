@@ -64,7 +64,11 @@ class User{
     function buyProduct($product){
         $price = $product->getPrice();
         if($this->creditCard->getValidation() && $price <= $this->creditCard->getBalance()){
-            return "Hai acquistato il prodotto e hai speso: €" . $price;
+            if($this->isRegistred){
+                return "Hai acquistato il prodotto e hai speso: €" . $price/100*80;
+            } else {
+                return "Hai acquistato il prodotto e hai speso: €" . $price;
+            }
         }
     }
 }

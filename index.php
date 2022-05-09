@@ -29,12 +29,15 @@ echo "<h2>Utente 1</h2>";
 $giorgio = new User("Giorgio", "Giovanni", 1990,  "g.g@gmail.com", "giorgiog22", true, $card, 0);
 var_dump($giorgio);
 
-echo "<h2>Esito acquisto</h2>";
+echo "<h2>Esito acquisto utente 1</h2>";
 echo $giorgio->buyProduct($croccantini);
 
 echo "<h2>Utente 2</h2>";
 $luca = new User("Luca", "Rossi", 1999,  "luca.rossi@gmail.com", "luca99", false, $card, 0);
 var_dump($luca);
+
+echo "<h2>Esito acquisto utente 2</h2>";
+echo $luca->buyProduct($croccantini);
 
 ?>
 
