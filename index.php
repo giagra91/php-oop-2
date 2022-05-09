@@ -5,6 +5,7 @@ include_once __DIR__ . "/classes/Game.php";
 include_once __DIR__ . "/classes/User.php";
 include_once __DIR__ . "/classes/CreditCard.php";
 include_once __DIR__ . "/classes/User.php";
+include_once __DIR__ . "/classes/Cart.php";
 
 
 $croc = new Food("croc", "500", "01/04/2023", "Food", 4.90, "Cat");
@@ -14,8 +15,16 @@ var_dump($gam);
 $number = new CreditCard("1234567890123456", 2023, 456, "Intesa");
 var_dump($number);
 
-$giorgio = new User("Giogio", "Giovanni", 1990,  "g.g@gmail.com", "giorgiog22", true, $number);
+$newCart = new Cart;
+$newCart->addToUserCart($gam);
+var_dump($newCart);
+$newCart->deleteFromUserCart($gam);
+var_dump($newCart);
+
+
+$giorgio = new User("Giogio", "Giovanni", 1990,  "g.g@gmail.com", "giorgiog22", true, $number, 0, $newCart);
 var_dump($giorgio);
+
 
 ?>
 
