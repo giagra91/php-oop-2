@@ -14,7 +14,7 @@ var_dump($gam);
 $number = new CreditCard("1234567890123456", 2023, 456, "Intesa");
 var_dump($number);
 
-$giorgio = new User("Giogio", "Giovanni", "g.g@gmail.com", "giorgiog22", true, $number);
+$giorgio = new User("Giogio", "Giovanni", 1990,  "g.g@gmail.com", "giorgiog22", true, $number);
 var_dump($giorgio);
 
 ?>

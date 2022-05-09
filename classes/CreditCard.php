@@ -17,7 +17,7 @@ class CreditCard{
         $this->cvv = $cvv;
         $this->bank = $bank;
 
-        if(is_numeric($number) && strlen($number) == 16 && $expireYear > 2022){
+        if(is_numeric($number) && strlen($number) == 16 && strlen($cvv) == 3 && $expireYear > 2022){
             $this->isValid = true;
         } else {
             $this->isValid = false;
