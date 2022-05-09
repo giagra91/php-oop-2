@@ -7,16 +7,10 @@ class Food extends Product{
     protected $weight;
     protected $expireDate;
 
-    function __construct($name, $weight, $expireDate, $category, $price, $kindOfAnimal){
-        parent::__construct($category, $price, $kindOfAnimal);
-        $this->name = $name;
+    function __construct($weight, $expireDate, $name, $category, $price, $kindOfAnimal){
+        parent::__construct($name, $category, $price, $kindOfAnimal);
         $this->weight = $weight;
         $this->expireDate = $expireDate;
-    }
-
-
-    function getName(){
-        return $this->$name;
     }
 
     function getWeight(){
@@ -24,7 +18,7 @@ class Food extends Product{
     }
 
     function getExpireDate(){
-        return $this->expireDate;
+        return "Il prodotto scade il " . $this->expireDate;
     }
 
 }

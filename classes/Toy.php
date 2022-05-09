@@ -2,22 +2,16 @@
 
 include_once __DIR__ . "/Product.php";
 
-class Game extends Product{
-    protected $name;
+class Toy extends Product{
     protected $weight;
     protected $measures;
 
 
-    function __construct($name, $weight, $measures, $category, $price, $kindOfAnimal){
-        parent::__construct($category, $price, $kindOfAnimal);
-        $this->name = $name;
+    function __construct($weight, $measures, $name, $category, $price, $kindOfAnimal){
+        parent::__construct($name, $category, $price, $kindOfAnimal);
         $this->weight = $weight;
         $this->measures = $measures;
 
-    }
-
-    function getName(){
-        return $this->$name;
     }
 
     function getWeight(){

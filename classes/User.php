@@ -45,19 +45,19 @@ class User{
     }
 
     function getFirstName(){
-        return $this->firstName;
+        return "Il nome è " . $this->firstName;
     }
 
     function getLastName(){
-        return $this->lastName;
+        return "Il cognome è " . $this->lastName;
     }
 
     function getBirthYear(){
-        return $this->birthYear;
+        return "L'anno di nascita è il " .  $this->birthYear;
     }
 
     function getEmail(){
-        return $this->email;
+        return "L'indirizzo email è " . $this->email;
     }
 
 
